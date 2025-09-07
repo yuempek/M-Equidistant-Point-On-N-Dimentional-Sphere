@@ -53,3 +53,5 @@ To ensure that the points remain on the surface of the sphere, we normalize the 
 $$
 P_i = \frac{P_i^{'}}{\|P_i^{'}\|} R
 $$
+
+### [Live Demo](https://editor.p5js.org/yuempek.junk/full/hjRi0HIbM)
