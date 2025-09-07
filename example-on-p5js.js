@@ -10,7 +10,7 @@ let circleRadius = 150;
 
 
 let P = [];
-let N = 2;
+let M = 2;
 
 function setup() {
   createCanvas(400, 400);
@@ -24,7 +24,7 @@ function draw() {
   textSize(20);
   textAlign(LEFT, CENTER);
 
-  text(`Point Count: ${N}`, 25, 25);
+  text(`Point Count: ${M}`, 25, 25);
 
   noFill();
   stroke(128);
@@ -34,11 +34,11 @@ function draw() {
   noStroke();
   
   // her x frame de bir bir nokta ekler
-  if (0 == frameCount % 5) N++;
+  if (0 == frameCount % 5) M++;
   
   calcNewPositions();
   
-  for (let i = 0; i < N; i++){
+  for (let i = 0; i < M; i++){
     
     let X = P[i].x;
     let Y = P[i].y;
@@ -70,8 +70,8 @@ function calcNewPositions(){
   
   // varsa eksik noktalari olustur
   let PL = P.length;
-  if(PL < N){
-    for(let i = 0; i < N-PL; i++){
+  if(PL < M){
+    for(let i = 0; i < M-PL; i++){
       let x = random() * 2 - 1;
       let y = random() * 2 - 1;
       let z = random() * 2 - 1; //random() * 2 - 1;
@@ -87,12 +87,12 @@ function calcNewPositions(){
   }
   
   // bir nokta üzerindeki toplam itme kuvvetlerini hesaplayıp noktaları kuvvet yonunde surukle
-  for(let i = 0; i < N; i++){ // tum noktalar icin
+  for(let i = 0; i < M; i++){ // tum noktalar icin
     let Dx = 0;
     let Dy = 0;
     let Dz = 0;
     
-    for(let j = 0; j < N; j++){ // diger tum noktalar ile
+    for(let j = 0; j < M; j++){ // diger tum noktalar ile
        if(j == i) continue;
        
        // aralarındaki uzaklığı hesapla
