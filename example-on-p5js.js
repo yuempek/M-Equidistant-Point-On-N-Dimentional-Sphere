@@ -1,4 +1,6 @@
 /**
+   This is a processing javascript (p5js) file. 
+   
    Equidistant points o sphere
 **/
 
@@ -22,7 +24,7 @@ function draw() {
   textSize(20);
   textAlign(LEFT, CENTER);
 
-  text(`frameCount: ${frameCount}`, 25, 25);
+  text(`Point Count: ${N}`, 25, 25);
 
   noFill();
   stroke(128);
