@@ -4,16 +4,16 @@
    Equidistant points o sphere
 **/
 
-let circleX = 200;
-let circleY = 200;
-let circleRadius = 150;
+let circleX = 400;
+let circleY = 400;
+let circleRadius = 300;
 
 let N = 4
 let P = [];
 let M = 2;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 800);
   calcNewPositions();
 }
 
@@ -27,8 +27,8 @@ function draw() {
   text(`Point Count: ${M}`, 25, 25);
 
   noFill();
-  stroke(128);
-  strokeWeight(3);
+  stroke(64);
+  strokeWeight(1);
   circle(circleX, circleY, 2 * circleRadius);
   
   noStroke();
@@ -50,17 +50,18 @@ function draw() {
     if(N > 2){
       let Z = P[i][2];
       XX = X*cos(a) - Z*sin(a);
-      // let ZZ = X*sin(a) + Z*cos(a);
+      let ZZ = X*sin(a) + Z*cos(a);
+      if(ZZ < 0) {
+        continue;
+      }
     }
     
     let pointX = circleX + circleRadius * XX;
     let pointY = circleY - circleRadius * YY;
     
-    //if(ZZ < 0) {
-    //  continue;
-    //}
     
-    fill('white');
+    
+    fill((P[i][N-1]/2+0.5)*255);
     circle(pointX, pointY, 3);
   }
   
